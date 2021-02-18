@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "cartographer"
+version = "0.1.0"
+description = "Automatically build a shopping cart of items matching natural-language descriptions."
+authors = ["Aidan Swope <aidanswope@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.25.1"
+torch = {path = "wheels/torch-1.8.0a0-cp38-cp38-linux_x86_64.whl"}
+requests-oauthlib = "^1.3.0"
+gsheets = "^0.5.1"
+transformers = "^4.3.2"
+rich = "^9.11.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+black = {version = "^20.8b1", allow-prereleases = true}
+rope = "^0.18.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+cartographer = 'cartographer.entrypoint:run'
